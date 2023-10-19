@@ -9,6 +9,7 @@ const initialState = {
 }
 
 export const fetchQuickPicks = createAsyncThunk("fetchQuickPicks", async (query, type) => {
+    console.log(BASE_URL)
     const response = await axios.get(`${BASE_URL}/gethomefeed`)
     console.log(response)
     return response.data

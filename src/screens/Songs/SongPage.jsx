@@ -45,7 +45,8 @@ const Page = () => {
     }
   };
   const next = () => {
-    SoundPlayer.stop();
+    SoundPlayer.stop()
+    dispatch(setCurrentTime(0))
     if (song.currentIndex) {
       if (currentQueue.queue?.length > song.currentIndex + 1) {
         SoundPlayer.stop();
@@ -85,8 +86,9 @@ const Page = () => {
       style={{
         backgroundColor: 'rgb(0,0,0)',
         height: Dimensions.get('window').height,
+        flex: 1
       }}>
-      <View style={[styles.background, { backgroundColor: bgColor }]}>
+      <View style={[styles.background, { backgroundColor: bgColor, flex: 1 }]}>
         <StatusBar translucent backgroundColor={'transparent'} />
         <SafeAreaView>
           <Image

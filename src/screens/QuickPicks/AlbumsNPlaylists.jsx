@@ -41,10 +41,8 @@ export default AlbumsNPlaylists
 const styles = StyleSheet.create({
     quickPicksTabs: {
         paddingVertical: cfs(12),
-        flex: 1,
         columnGap: cfs(5),
-        width: cfs(100),
-        height: cfs(180)
+        width: cfs(100)
     },
     artistBanner: {
         height: cfs(110),

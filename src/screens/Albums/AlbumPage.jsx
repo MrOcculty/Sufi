@@ -19,7 +19,7 @@ const AlbumPage = () => {
           marginLeft: cfs(20)
         }}>
           <Image
-            source={{ uri: albumData.data?.header?.thumbnails?.[1]?.url }}
+            source={{ uri: albumData.data?.header?.thumbnails?.[0]?.url }}
             style={styles.img}
           />
           {
@@ -31,7 +31,7 @@ const AlbumPage = () => {
                 id={song.id}
                 name={song.title}
                 singer={song.overlay?.content?.pause_label?.split('-')[1].trim()}
-                image={{ uri: albumData.data?.header?.thumbnails?.[3]?.url }}
+                image={{ uri: albumData.data?.header?.thumbnails?.[1]?.url }}
               />)
           }
         </ScrollView>

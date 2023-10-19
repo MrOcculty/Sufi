@@ -17,7 +17,7 @@ const ArtistPage = () => {
           marginLeft: cfs(20)
         }}>
           <Image
-            source={{ uri: artistData.data?.header?.thumbnail?.contents?.[3]?.url }}
+            source={{ uri: artistData.data?.header?.thumbnail?.contents?.[1]?.url }}
             style={styles.img}
           />
           {artistData.data?.sections.map(section => {
@@ -62,10 +62,10 @@ export default ArtistPage
 
 const styles = StyleSheet.create({
   img: {
-    borderRadius: cfs(110),
+    // borderRadius: cfs(110),
     marginVertical: cfs(30),
     height: cfs(220),
-    width: cfs(220)
+    width: cfs(320)
   },
 
 

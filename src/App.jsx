@@ -12,10 +12,16 @@ import ArtistPage from './screens/Artists/ArtistPage'
 import PlaylistPage from './screens/Playlists/PlaylistPage'
 import SongPage from './screens/Songs/SongPage'
 import PlaybackControllerDisplayer from './components/PlaybackController'
+import { useEffect } from 'react'
+import SplashScreen from 'react-native-splash-screen'
 
 const Stack = createNativeStackNavigator()
 
 const App = () => {
+
+  useEffect(() => {
+    SplashScreen.hide()
+  }, [])
   return (
     <Provider store={store}>
       <NavigationContainer>

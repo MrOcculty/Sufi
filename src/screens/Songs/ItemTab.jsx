@@ -57,8 +57,7 @@ export default ItemTab
 
 const styles = StyleSheet.create({
     itemTab: {
-        paddingVertical: cfs(5),
-        flex: 1,
+        paddingVertical: cfs(4),
         flexDirection: "row",
         columnGap: cfs(5),
         marginRight: cfs(90),

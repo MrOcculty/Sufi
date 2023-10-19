@@ -35,12 +35,6 @@ const PlaybackController = () => {
             }
         })
 
-
-
-
-
-
-
         let intervalId
 
         const changeTime = async () => {
@@ -57,17 +51,15 @@ const PlaybackController = () => {
 
         intervalId = setInterval(async () => await changeTime(), 1000)
 
-
-
-
-
-
-
-
         if (song.data) {
             console.log(song.data?.basic_info.id)
-            SoundPlayer.playUrl(`${BASE_URL}/stream?id=${song.data?.basic_info.id}`)
-            !song.isPlaying && dispatch(toggleIsPlaying())
+            try {
+                SoundPlayer.playUrl(`${BASE_URL}/stream?id=${song.data?.basic_info.id}`)
+                !song.isPlaying && dispatch(toggleIsPlaying())
+            }
+            catch (err) {
+                console.log(err)
+            }
         }
 
         if (song.isPlaying) {
@@ -98,6 +90,7 @@ const PlaybackController = () => {
     const next = () => {
         if (song.currentIndex) {
             SoundPlayer.stop()
+            dispatch(setCurrentTime(0))
             if (currentQueue.queue?.length > song.currentIndex + 1) {
                 SoundPlayer.stop()
                 const nextSongId = currentQueue.queue[song.currentIndex + 1].id

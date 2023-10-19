@@ -16,7 +16,7 @@ const PlaylistPage = () => {
           marginLeft: cfs(20)
         }}>
           <Image
-            source={{ uri: playlist.data?.header.thumbnails?.[2]?.url }}
+            source={{ uri: playlist.data?.header.thumbnails?.[0]?.url }}
             style={styles.img}
           />
           {playlist.data?.items?.map((item, index) => <ItemTab key={item.id} from="playlist" index={index} id={item.id} name={item.title} singer={item.artists?.map(artist => artist.name).join(", ")} image={{ uri: item.thumbnail.contents[0].url }} />)}

@@ -16,7 +16,6 @@ const Navbar = ({ selectedTab }) => {
                     </View>
                     <View>
                         <TouchableOpacity onPress={() => navigation.navigate("Songs")}>
-
                             <Text style={[styles.tabText, selectedTab === 'Songs' ? styles.activeTab : styles.inActiveTab]}>Songs</Text>
                         </TouchableOpacity>
                     </View>
@@ -49,15 +48,14 @@ const styles = StyleSheet.create({
         marginLeft: cfs(20),
     },
     wrapper: {
-        flex: 1,
         flexDirection: "row",
         marginVertical: cfs(20),
         columnGap: cfs(10)
     },
     tabText: {
         paddingHorizontal: cfs(10),
-        borderRadius: cfs(5),
-        height: cfs(25),
+        borderRadius: cfs(3),
+        paddingVertical: cfs(2.5),
         fontSize: cfs(15),
         fontWeight: "bold",
         color: "#ffffff"

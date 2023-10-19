@@ -30,7 +30,6 @@ const Header = ({ heading }) => {
 
   return (
     <>
-      {/* <StatusBar translucent backgroundColor={"transparent"} /> */}
       <View style={styles.header}>
         <Image
           source={require('../assets/icons/SettingsIcon.png')}
@@ -42,6 +41,7 @@ const Header = ({ heading }) => {
               {heading}
             </Text> :
             <TextInput
+              numberOfLines={1}
               value={query && query}
               style={styles.rightText}
               textAlign='right'
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    height: cfs(100)
+    // height: cfs(100)
   },
   settingsIcon: {
     opacity: 0.5,

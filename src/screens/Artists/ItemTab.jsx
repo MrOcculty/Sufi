@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 const ItemTab = ({ id, name, subs, image }) => {
     const navigation = useNavigation()
     const diapatch = useDispatch()
+    console.log(image)
     const handlePress = () => {
         diapatch(fetchArtist(id))
         navigation.navigate("ArtistPage")

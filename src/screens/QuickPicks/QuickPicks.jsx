@@ -27,12 +27,6 @@ const QuickPicks = () => {
                         if (section.contents[0].item_type === "song" || section.contents[0].item_type === "video")
                             return (
                                 <View key={"QP" + section.header?.title?.text}>
-                                    {/* {
-                                        quickPicks.data?.indexOf(section) !== 0 &&
-                                        <Text style={[styles.heading, styles.contentBox]}>
-                                            {section.header.title.text}
-                                        </Text>
-                                    } */}
                                     {
                                         quickPicks.data?.indexOf(section) === 0 && < ScrollView nestedScrollEnabled={true} horizontal={true} showsHorizontalScrollIndicator={false} decelerationRate={0.4} snapToInterval={cfs(355)} >
                                             <View style={styles.pops}>
@@ -72,30 +66,21 @@ export default QuickPicks
 
 const styles = StyleSheet.create({
     heading: {
-        paddingBottom: cfs(10),
+        paddingBottom: cfs(5),
         fontSize: cfs(25),
         fontWeight: "bold",
         color: 'white',
         opacity: 0.8
     },
     contentBox: {
-        marginTop: cfs(20)
+        marginTop: cfs(10)
     },
     pops: {
         height: cfs(260),
-        flex: 1,
         gap: cfs(15),
         flexWrap: "wrap",
     },
     artists: {
-
-        flexDirection: "row",
-        gap: cfs(35),
-        flexWrap: "wrap",
-    },
-    albums: {
-        height: cfs(180),
-        flex: 1,
         flexDirection: "row",
         gap: cfs(35),
         flexWrap: "wrap",
